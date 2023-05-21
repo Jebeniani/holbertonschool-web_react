@@ -1,0 +1,56 @@
+p,
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* header CSS */
+.App-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid rgb(207, 8, 8);
+}
+
+.App-header h1 {
+    color: rgb(207, 8, 8);
+    font-weight: 660;
+}
+
+.holberton-logo {
+    width: 200px;
+}
+
+/* body CSS */
+.App-body {
+    height: 50vh;
+}
+
+.App-body p {
+    margin: 40px 0px 15px 40px;
+}
+
+.login-form {
+    margin: 0px 40px;
+}
+
+.login-form label {
+    margin-right: 10px
+}
+
+.login-form #password-label {
+    margin-left: 10px;
+}
+
+/* footer CSS */
+.App-footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-top: 3px solid rgb(207, 8, 8);
+}
+
+.App-footer p {
+    font-style: italic;
+}
+
+/* media querys */
+@media screen {}
