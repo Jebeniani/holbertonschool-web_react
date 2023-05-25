@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Login from '../Login/Login';
 import CourseList from '../CourseList/CourseList';
+import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
 
 class App extends Component {
     componentDidMount() {
@@ -28,7 +29,7 @@ class App extends Component {
         const listCourses = [
             { id: 1, name: 'ES6', credit: 60 },
             { id: 2, name: 'Webpack', credit: 20 },
-            { id: 3, name: 'React', credit: 40 }
+            { id: 3, name: 'React', credit: 40 },
         ];
 
         return (
@@ -36,7 +37,18 @@ class App extends Component {
                 <Notifications />
                 <Header />
                 <div className="App-body">
-                    {isLoggedIn ? <CourseList listCourses={listCourses} /> : <Login />}
+                    {isLoggedIn ? (
+                        <BodySectionWithMarginBottom title="Course list">
+                            <CourseList listCourses={listCourses} />
+                        </BodySectionWithMarginBottom>
+                    ) : (
+                        <BodySectionWithMarginBottom title="Log in to continue">
+                            <Login />
+                        </BodySectionWithMarginBottom>
+                    )}
+                    <BodySectionWithMarginBottom title="News from the School">
+                        <p>Some random text goes here...</p>
+                    </BodySectionWithMarginBottom>
                 </div>
                 <Footer />
             </div>
@@ -46,12 +58,12 @@ class App extends Component {
 
 App.propTypes = {
     isLoggedIn: PropTypes.bool,
-    logOut: PropTypes.func
+    logOut: PropTypes.func,
 };
 
 App.defaultProps = {
     isLoggedIn: false,
-    logOut: () => { } // Empty function as the default value for logOut prop
+    logOut: () => { },
 };
 
 export default App;
